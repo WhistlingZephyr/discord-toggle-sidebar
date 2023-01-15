@@ -27,7 +27,7 @@
             if (hidden) {
                 sidebar.style = '';
             } else {
-                sidebar.style = '';
+                sidebar.style = 'display: none;';
             }
             hidden = !hidden;
         },
