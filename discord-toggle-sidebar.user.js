@@ -5,7 +5,7 @@
 // @supportURL   https://github.com/WhistlingZephyr/discord-toggle-sidebar/issues
 // @updateURL    https://github.com/WhistlingZephyr/discord-toggle-sidebar/raw/main/discord-toggle-sidebar.user.js
 // @downloadURL  https://github.com/WhistlingZephyr/discord-toggle-sidebar/raw/main/discord-toggle-sidebar.user.js
-// @version      0.1.4
+// @version      0.1.5
 // @description  A simple UserScript to toggle Discord sidebar
 // @author       WhistlingZephyr
 // @match        https://discord.com/channels/*
@@ -19,18 +19,34 @@
 
 (function () {
     'use strict';
-    let hidden = false;
+    let sidebarHidden = false;
+    let serverListHidden = false;
     GM.registerMenuCommand(
         'Toggle sidebar',
         () => {
             const sidebar = document.querySelector('[class^="sidebar-"]');
-            if (hidden) {
+            if (sidebarHidden) {
                 sidebar.style = '';
             } else {
                 sidebar.style = 'display: none;';
             }
-            hidden = !hidden;
+            sidebarHidden = !sidebarHidden;
         },
         'h'
+    );
+    GM.registerMenuCommand(
+        'Toggle server list',
+        () => {
+            const serverList = document.querySelector(
+                '[data-list-id="guildsnav"]'
+            );
+            if (serverListHidden) {
+                serverList.style = '';
+            } else {
+                serverList.style = 'display: none;';
+            }
+            serverListHidden = !serverListHidden;
+        },
+        's'
     );
 })();

@@ -9,4 +9,5 @@ Install the UserScript from here: https://github.com/WhistlingZephyr/discord-tog
 ### Step 3. Usage:
 1. Open Discord.
 2. Open your TamperMonkey's popout by clicking its icon.
-3. Press "h" or click the "Toggle sidebar" option of Discord Toggle Sidebar.
+3. Press "h" or click the "Toggle sidebar" option to toggle sidebar.
+4. Press "s" or click the "Toggle server list" option to toggle server list.
