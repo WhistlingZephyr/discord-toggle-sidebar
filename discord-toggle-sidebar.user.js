@@ -5,7 +5,7 @@
 // @supportURL   https://github.com/WhistlingZephyr/discord-toggle-sidebar/issues
 // @updateURL    https://github.com/WhistlingZephyr/discord-toggle-sidebar/raw/main/discord-toggle-sidebar.user.js
 // @downloadURL  https://github.com/WhistlingZephyr/discord-toggle-sidebar/raw/main/discord-toggle-sidebar.user.js
-// @version      0.1.5
+// @version      0.1.6
 // @description  A simple UserScript to toggle Discord sidebar
 // @author       WhistlingZephyr
 // @match        https://discord.com/channels/*
@@ -38,7 +38,7 @@
         'Toggle server list',
         () => {
             const serverList = document.querySelector(
-                '[data-list-id="guildsnav"]'
+                '[aria-label="Servers sidebar"]'
             );
             if (serverListHidden) {
                 serverList.style = '';
