@@ -10,9 +10,6 @@
 // @author       WhistlingZephyr
 // @match        https://discord.com/channels/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=discord.com
-// @grant        GM_getValue
-// @grant        GM_listValues
-// @grant        GM_setValue
 // @grant        GM_registerMenuCommand
 // @run-at       document-idle
 // ==/UserScript==
