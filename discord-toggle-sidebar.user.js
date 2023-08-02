@@ -8,6 +8,7 @@
 // @version      0.1.7
 // @description  A simple UserScript to toggle Discord sidebar
 // @author       WhistlingZephyr
+// @license      MIT
 // @match        https://discord.com/channels/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=discord.com
 // @grant        GM_registerMenuCommand
