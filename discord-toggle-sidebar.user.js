@@ -5,7 +5,7 @@
 // @supportURL   https://github.com/WhistlingZephyr/discord-toggle-sidebar/issues
 // @updateURL    https://github.com/WhistlingZephyr/discord-toggle-sidebar/raw/main/discord-toggle-sidebar.user.js
 // @downloadURL  https://github.com/WhistlingZephyr/discord-toggle-sidebar/raw/main/discord-toggle-sidebar.user.js
-// @version      0.1.7
+// @version      0.1.8
 // @description  A simple UserScript to toggle Discord sidebar
 // @author       WhistlingZephyr
 // @license      MIT
@@ -22,7 +22,7 @@
     GM.registerMenuCommand(
         'Toggle sidebar',
         () => {
-            const sidebar = document.querySelector('[class^="sidebar-"]');
+            const sidebar = document.querySelector('[class^="sidebar_"]');
             if (sidebarHidden) {
                 sidebar.style = '';
             } else {
