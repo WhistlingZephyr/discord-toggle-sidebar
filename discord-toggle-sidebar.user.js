@@ -5,7 +5,7 @@
 // @supportURL   https://github.com/WhistlingZephyr/discord-toggle-sidebar/issues
 // @updateURL    https://github.com/WhistlingZephyr/discord-toggle-sidebar/raw/main/discord-toggle-sidebar.user.js
 // @downloadURL  https://github.com/WhistlingZephyr/discord-toggle-sidebar/raw/main/discord-toggle-sidebar.user.js
-// @version      0.1.9
+// @version      0.1.10
 // @description  A simple UserScript to toggle Discord sidebar
 // @author       WhistlingZephyr
 // @license      MIT
@@ -17,34 +17,22 @@
 
 (function () {
     'use strict';
-    let sidebarHidden = false;
-    let serverListHidden = false;
-    GM_registerMenuCommand(
-        'Toggle sidebar',
-        () => {
-            const sidebar = document.querySelector('[class^="sidebar_"]');
-            if (sidebarHidden) {
-                sidebar.style = '';
-            } else {
-                sidebar.style = 'display: none;';
-            }
-            sidebarHidden = !sidebarHidden;
-        },
-        'h'
-    );
-    GM_registerMenuCommand(
-        'Toggle server list',
-        () => {
-            const serverList = document.querySelector(
-                '[aria-label="Servers sidebar"]'
-            );
-            if (serverListHidden) {
-                serverList.style = '';
-            } else {
-                serverList.style = 'display: none;';
-            }
-            serverListHidden = !serverListHidden;
-        },
-        's'
-    );
+    function addToggle(label, selector, shortcut) {
+        let lastState = '';
+        GM_registerMenuCommand(
+            label,
+            () => {
+                const element = document.querySelector(selector);
+                if (element.style.display !== 'none') {
+                    lastState = element.style.display;
+                    element.style.display = 'none';
+                } else {
+                    element.style.display = lastState;
+                }
+            },
+            shortcut
+        );
+    }
+    addToggle('Toggle sidebar', '[class^="sidebar_"]', 'h');
+    addToggle('Toggle server list', '[aria-label="Servers sidebar"]', 's');
 })();
